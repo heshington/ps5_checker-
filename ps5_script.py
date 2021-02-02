@@ -24,10 +24,10 @@ def send_email():
         # set the 'from' address,
         fromaddr = 'enter_email used to send' #Enter the email thats gonna send the mesasge. 
         # set the 'to' addresses,
-        toaddrs  = ['ashley12341@gmail.com',]
+        toaddrs  = ['',] #Enter the email address to send to
 
         # setup the email server,
-        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server = smtplib.SMTP('smtp.gmail.com', 587) #change if not gmail
         server.starttls()
         # add my account login name and password,
         server.login("ENTER_YOUR_SENDING_EMAIL_ADDRESS", "EMAIL_PASSWORD") #Enter your email address and password here
