@@ -1,6 +1,7 @@
 import requests
 import bs4
 import smtplib
+import syslog
 
 url =  "https://www.mightyape.co.nz/product/sony-playstation-5-console/31675007"
 
@@ -43,8 +44,9 @@ def send_email():
         server.quit()
 
 if isInStock(url):
-    print("its in stock!")
+    syslog.syslog("Ps5 is in stock... sending email")
     send_email()
     #cron job to run every 30min send email to ashley's email.
 else:
-    print("It's not in stock")
+    syslog.syslog('Ps5 is not in stock..')
+    
